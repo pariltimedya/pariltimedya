@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parıltı Medya</title>
+  <meta name="description" content="Parıltı Medya — çok yakında yayındayız.">
+  <style>
+    :root { color-scheme: light dark; --bg: #faf8f3; --fg: #1c1a17; --muted: #6b665e; --accent: #c8901a; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #14130f; --fg: #f3efe6; --muted: #a39d92; --accent: #e9b949; }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      display: grid; place-items: center; padding: 24px;
+      background: var(--bg); color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      text-align: center;
+    }
+    h1 { margin: 0 0 12px; font-size: clamp(2.2rem, 8vw, 4.5rem); letter-spacing: -0.03em; line-height: 1.05; }
+    h1 span { color: var(--accent); }
+    p { margin: 0; color: var(--muted); font-size: clamp(1rem, 2.6vw, 1.25rem); }
+    footer { margin-top: 40px; font-size: 0.85rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Parıltı <span>Medya</span></h1>
+    <p>Çok yakında yayındayız.</p>
+    <footer>&copy; 2026 Parıltı Medya</footer>
+  </main>
+</body>
+</html>
