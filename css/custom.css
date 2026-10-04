@@ -1,0 +1,35 @@
+/* Parilti Media overrides on top of the theme */
+.divider-image-1 { background-image: url(../img/f/island-13-w.jpg) !important; }
+.divider-image-2 { background-image: url(../img/f/nature-09-w.jpg) !important; }
+.divider-image-3 { background-image: url(../img/f/church-05-w.jpg) !important; }
+.divider-image-4 { background-image: url(../img/f/island-04-w.jpg) !important; }
+
+/* YouTube player inside the article thumb slot */
+.mxd-article__thumb.pm-video { height: auto; aspect-ratio: auto; }
+.mxd-article__thumb.pm-video .ratio { width: 100%; }
+.mxd-article__thumb.pm-video iframe { border: 0; display: block; }
+.lenis.lenis-scrolling .mxd-article__thumb.pm-video iframe { pointer-events: auto; }
+/* hero headlines: plain white instead of the theme's difference blend */
+.mxd-hero-02__intro, .mxd-hero-02__outro { mix-blend-mode: normal !important; }
+.mxd-hero-02__intro h1, .mxd-hero-02__outro p { color: #fff !important; text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35); }
+
+/* keep breadcrumbs clear of the fixed header */
+.inner-headline:not(.fullheight) { padding-top: 11rem !important; }
+/* language switch */
+.pm-lang { margin-right: 1.6rem; }
+@media only screen and (max-width: 767px) { .pm-hello { display: none !important; } }
+
+/* demo mode: countdown badge, then a full-page notice once the deadline passes */
+.pm-demo-badge { position: fixed; left: 50%; bottom: 1.6rem; transform: translateX(-50%); z-index: 99990;
+  padding: 0.8rem 1.6rem; border-radius: 99px; background: rgba(15, 15, 15, 0.82); color: #fff;
+  font: 500 1.3rem/1 "JetBrains Mono", monospace; letter-spacing: 0.06em; white-space: nowrap;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); pointer-events: none; }
+.pm-demo-badge b { color: #ffb020; font-weight: 600; }
+.pm-demo-lock { position: fixed; inset: 0; z-index: 99999; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 2rem; padding: 3rem; text-align: center; background: #0f0f0f; color: #fff; }
+.pm-demo-lock h2 { color: #fff; font-size: clamp(4rem, 9vw, 10rem); line-height: 1; letter-spacing: -0.03em; }
+.pm-demo-lock p { color: #b9b6b3; font-size: clamp(1.6rem, 2vw, 2.2rem); max-width: 34em; }
+
+/* seven letters instead of the theme's six */
+.fw-mark__content { font-size: 23.4cqw !important; }
+.pm-sources a { text-decoration: underline; text-underline-offset: 0.2em; }
