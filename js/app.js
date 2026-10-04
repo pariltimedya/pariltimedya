@@ -193,7 +193,7 @@ function mxdLoader() {
   const loaderTime = 1.2;
 
   Promise.all([
-    new Promise(resolve => imgLoad.on("done", resolve)),
+    new Promise(resolve => { imgLoad.on("always", resolve); setTimeout(resolve, 2500); }),
     new Promise(resolve => setTimeout(resolve, loaderTime * 1000))
   ]).then(() => {
   gsap.timeline()
