@@ -22,7 +22,8 @@
     var left = deadline - Date.now();
     if (left <= 0) { clearInterval(timer); lock(); return; }
     var s = Math.floor(left / 1000);
-    badge.innerHTML = "DEMO &middot; <b>" + pad(Math.floor(s / 3600)) + ":" + pad(Math.floor(s / 60) % 60) + ":" + pad(s % 60) + "</b>";
+    badge.innerHTML = "DEMO &middot; <b>" + pad(Math.floor(s / 3600)) + ":" + pad(Math.floor(s / 60) % 60) + ":" + pad(s % 60) + "</b>" +
+      "<small>" + (tr ? "Maç izlemeyenlere +1 hafta" : "+1 week for those who skip the match") + "</small>";
   }
   var timer = setInterval(tick, 1000);
   function start() { document.body.appendChild(badge); tick(); }
