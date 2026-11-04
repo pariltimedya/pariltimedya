@@ -3,11 +3,7 @@
   var deadline = Date.parse(script.getAttribute("data-deadline"));
   if (!deadline) return;
   var tr = document.documentElement.lang === "tr";
-  var badge = document.createElement("div");
-  badge.className = "pm-demo-badge";
-  function pad(n) { return (n < 10 ? "0" : "") + n; }
   function lock() {
-    badge.remove();
     var el = document.createElement("div");
     el.className = "pm-demo-lock";
     el.innerHTML = "<h2>" + (tr ? "Demo modu kapandı" : "Demo mode has ended") + "</h2><p>" +
@@ -18,14 +14,9 @@
     document.body.appendChild(el);
     document.documentElement.style.overflow = "hidden";
   }
-  function tick() {
-    var left = deadline - Date.now();
-    if (left <= 0) { clearInterval(timer); lock(); return; }
-    var s = Math.floor(left / 1000);
-    badge.innerHTML = "DEMO &middot; <b>" + pad(Math.floor(s / 3600)) + ":" + pad(Math.floor(s / 60) % 60) + ":" + pad(s % 60) + "</b>" +
-      "<small>" + (tr ? "Maç izlemeyenlere +1 hafta" : "+1 week for those who skip the match") + "</small>";
+  function check() {
+    if (deadline - Date.now() <= 0) { clearInterval(timer); lock(); }
   }
-  var timer = setInterval(tick, 1000);
-  function start() { document.body.appendChild(badge); tick(); }
-  if (document.body) start(); else document.addEventListener("DOMContentLoaded", start);
+  var timer = setInterval(check, 1000);
+  if (document.body) check(); else document.addEventListener("DOMContentLoaded", check);
 })();
