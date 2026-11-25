@@ -22,7 +22,7 @@
 .pm-lang { margin-right: 1.6rem; }
 @media only screen and (max-width: 767px) { .pm-hello { display: none !important; } }
 
-/* demo mode: countdown badge, then a full-page notice once the deadline passes */
+/* badge and full-page notice */
 .pm-badge { position: fixed; left: 50%; bottom: 1.6rem; transform: translateX(-50%); z-index: 99990;
   padding: 0.8rem 1.6rem; border-radius: 99px; background: rgba(15, 15, 15, 0.82); color: #fff;
   font: 500 1.3rem/1 "JetBrains Mono", monospace; letter-spacing: 0.06em; white-space: nowrap;
